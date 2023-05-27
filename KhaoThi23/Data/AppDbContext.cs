@@ -25,9 +25,9 @@ namespace KhaoThi23.Data
                 .HasKey(e => e.AccountId);
 
             modelBuilder.Entity<PhucKhao>()
-            .HasOne(p => p.Employee)
-            .WithMany()
-            .HasForeignKey(p => p.EmployeeId);
+                .HasOne(p => p.Employee)
+                .WithMany()
+                .HasForeignKey(p => p.EmployeeId);
 
             modelBuilder.Entity<News>()
                 .HasKey(c => c.NewsId);
@@ -36,7 +36,7 @@ namespace KhaoThi23.Data
                 .HasOne(p => p.Employee)
                 .WithMany()
                 .HasForeignKey(p => p.EmployeeId);
-//ok cơ bản là ông kiểm xem đúng ko
+
         }
     }
 }

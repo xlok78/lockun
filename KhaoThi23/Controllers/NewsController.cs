@@ -85,7 +85,7 @@ namespace KhaoThi23.Controllers
         // POST: api/News
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<News>> PostNews(News news)
+        public async Task<ActionResult<News>> PostNews(NewsDTO NewsDTO)
         {
             var employee = await _context.Employees.FindAsync(NewsDTO.EmployeeId);
             if (employee == null)
@@ -93,17 +93,40 @@ namespace KhaoThi23.Controllers
                 return BadRequest("Invalid EmployeeId");
             }
 
-            var News = new News
+            var news = new News
             {
-                NewsId = News.NewsId,
+                NewsId = NewsDTO.NewsId,
                 EmployeeId = employee.EmployeeId,
-                Title = News.Title,
-
+                Title = NewsDTO.Title,
+                Status = NewsDTO.Status,
+                Content1 = NewsDTO.Content1,
+                Image1 = NewsDTO.Image1,
+                ImageDesc1 = NewsDTO.ImageDesc1,
+                Content2 = NewsDTO.Content2,
+                Image2 = NewsDTO.Image2,
+                ImageDesc2 = NewsDTO.ImageDesc2,
+                Content3 = NewsDTO.Content3,
+                Image3 = NewsDTO.Image3,
+                ImageDesc3 = NewsDTO.ImageDesc3,
+                Content4 = NewsDTO.Content4,
+                Image4 = NewsDTO.Image4,
+                ImageDesc4 = NewsDTO.ImageDesc4,
+                Content5 = NewsDTO.Content5,
+                Image5 = NewsDTO.Image1,
+                ImageDesc5 = NewsDTO.ImageDesc5,
                 CreatedAt = DateTime.Now,
-                UpdateAt = DateTime.Now,
-                Employee = employee
+                UpdatedAt = DateTime.Now,
+                
             };
-
+            /*
+            if (NewsDTO.Image1 != null)
+            {
+                // Lưu hình ảnh vào database
+                using var memoryStream = new MemoryStream();
+                await NewsDTO.Image1.CopyToAsync(memoryStream);
+                News.Image1 = Convert.ToBase64String(memoryStream.ToArray());
+            }
+            */
             if (_context.News == null)
               {
                   return Problem("Entity set 'AppDbContext.News'  is null.");
