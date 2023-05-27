@@ -35,20 +35,20 @@ namespace KhaoThi23.Controllers
 
         // GET: api/News/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<News>> GetNews(int id)
+        public async Task<ActionResult<News>> GetNews(string id)
         {
-          if (_context.News == null)
-          {
-              return NotFound();
-          }
-            var news = await _context.News.FindAsync(id);
+
+            var news = await _context.News
+                .Include(p => p.Employee)
+                .Where(p => p.EmployeeId == id.ToString())
+                .ToListAsync();
 
             if (news == null)
-            {
-                return NotFound();
-            }
+                {
+                    return NotFound();
+                }
 
-            return news;
+            return Ok(news);
         }
 
         // PUT: api/News/5
