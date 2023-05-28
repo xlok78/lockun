@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KhaoThi23.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230526151633_mssql.onprem_migration_301")]
-    partial class mssqlonprem_migration_301
+    [Migration("20230528155153_mssql.onprem_migration_604")]
+    partial class mssqlonprem_migration_604
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -123,18 +123,23 @@ namespace KhaoThi23.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Image1")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image2")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image3")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image4")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image5")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageDesc1")

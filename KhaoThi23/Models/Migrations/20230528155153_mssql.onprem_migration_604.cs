@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace KhaoThi23.Migrations
 {
     /// <inheritdoc />
-    public partial class mssqlonprem_migration_301 : Migration
+    public partial class mssqlonprem_migration_604 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -77,19 +77,19 @@ namespace KhaoThi23.Migrations
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Content1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Image1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image1 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageDesc1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Content2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Image2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageDesc2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Content3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Image3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image3 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageDesc3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Content4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Image4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image4 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageDesc4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Content5 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Image5 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image5 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageDesc5 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)

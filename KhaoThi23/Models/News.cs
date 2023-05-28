@@ -1,13 +1,18 @@
-﻿namespace KhaoThi23.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace KhaoThi23.Models
 {
     public class News
     {
+        [Key]
         public int NewsId { get; set; }
+
         public string EmployeeId { get; set; }
         public string Title { get; set; }
         public string Status { get; set; }
         public string? Content1 { get; set; }
-        public string? Image1 { get; set; }
+        public string Image1 { get; set; }
         public string? ImageDesc1 { get; set; }
 
         public string? Content2 { get; set; }
