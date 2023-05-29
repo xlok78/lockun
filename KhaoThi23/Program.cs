@@ -10,6 +10,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -80,11 +82,6 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Cấu hình chạy migration tự động
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    await dbContext.Database.MigrateAsync();
-}
 
 
 // Middleware for authentication and role-based authorization using JWT token
